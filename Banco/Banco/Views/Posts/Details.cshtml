@@ -1,0 +1,85 @@
+﻿@model Banco.Models.Post
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div class="container">
+    <div class="col-md-8 cajon prs derecha">
+        <h4 class="derecha">Detalles de la propiedad</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.tittle)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.tittle)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.description)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.description)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.contenido)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.contenido)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.image)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.image)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.likes)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.likes)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.provincia)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.provincia)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.lote)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.lote)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.precio)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.precio)
+            </dd>
+
+
+        </dl>
+    </div>
+</div>
+<p class="derecha2">
+    @Html.ActionLink("Editar", "Edit", new { id = Model.id_post }) |
+    @Html.ActionLink("Volver", "Index")
+</p>

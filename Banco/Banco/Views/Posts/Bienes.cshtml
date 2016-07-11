@@ -1,0 +1,71 @@
+﻿@model IEnumerable<Banco.Models.Coment>
+@{
+    ViewBag.Title = "Bienes";
+}
+
+<h2>Bienes</h2>
+<div class="container">
+    <div class="row">
+        <div class="col s12 m12">
+            <div class="row">
+                <div class="col s12 m12">
+                    <div class="card large">
+                        <div class="card-image">
+                            <img class="materialboxed" width="850" src=@ViewData["imagen"] >
+                            <span class="card-title">@ViewData["description"] </span>
+                        </div>
+                        <div class="card-content">
+                            <p>
+                                @ViewData["contenido"] 
+                            </p>
+                        </div>
+                        <div class="card-action">
+                            <div class="sobre">
+                                <div class="col-md-6 center comment">
+                                    <a href="/Posts/Likes/@ViewData["id_post"] ">Mia</a>
+                                </div>
+                            </div>
+                            <div class="sobre">
+                                <div class="col-md-6 center comment">
+                                    <a class="tooltipped" data-position="bottom" data-delay="10" data-tooltip="Inicia sesion para comentar" href="/Posts/Comment" id="miBoton">Comment</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        @ViewData["error"]
+                    </div>
+                    <div class="row center">
+                        <div class="col s12 m4 l4"><i class="material-icons">location_on</i><p>Ubicacion</p><p>@ViewData["provincia"] </p></div>
+                        <div class="col s12 m4 l4"><i class="material-icons">aspect_ratio</i><p>M2</p><p>@ViewData["lote"] </p></div>
+                        <div class="col s12 m4 l4"><i class="material-icons">shopping_cart</i><p>Precio</p><p>@ViewData["precio"] </p></div>
+                    </div>
+                    <div class="col s12 m12">
+                        <ul class="collection with-header">
+                            <li class="collection-header"><h4>Comentarios</h4><label>@ViewData["likes"] personas quieren esta propiedad</label></li>
+                            <li class="collection-item">
+                                <div class="row">
+                                   @using (Html.BeginForm())
+                                   {
+                                    @Html.AntiForgeryToken()
+                                        
+                                        <div class="row" id="scrollToHere">
+                                            <div class="input-field col s12" id="cuadrocom" >
+                                            <input name="comment" id="comment" class=""/>
+                                                <label for="textarea1" name="comment">Escribe un comentario...</label>
+                                                <a href="" value="Enviar" class="btn">Enviar</a>
+                                            </div>
+                                        </div>
+                                   
+                                   }
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+               </div>
+            </div>
+        </div>
+    </div>
+</div>
